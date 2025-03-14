@@ -3,12 +3,13 @@ import { NextResponse } from 'next/server';
 // Add this export configuration to mark the route as dynamic
 export const dynamic = 'force-dynamic';
 
+const BACKEND_URL = process.env.BACKEND_URL || 'http://127.0.0.1:5000';
 export async function POST(req: Request) {
   try {
     const { message } = await req.json();
     
     try {
-      const response = await fetch('http://localhost:5000/chat', {
+      const response = await fetch(`${BACKEND_URL}/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
