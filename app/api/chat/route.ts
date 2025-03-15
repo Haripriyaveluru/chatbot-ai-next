@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 // Add this export configuration to mark the route as dynamic
 export const dynamic = 'force-dynamic';
 
-const BACKEND_URL = process.env.BACKEND_URL || 'http://127.0.0.1:5000';
+const BACKEND_URL = process.env.BACKEND_URL || 'https://chatbot-backend-vza8.onrender.com';
 export async function POST(req: Request) {
   try {
     const { message } = await req.json();
